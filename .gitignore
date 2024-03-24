@@ -18,6 +18,7 @@ __便利コード__/機械学習/mnist_train/**
 **/temp*/*
 __実装系__/Tracking/**
 **/runs/**
+**/model*/**
 **/yolov8*.pt
 *.mp4
 

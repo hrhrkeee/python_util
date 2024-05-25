@@ -6,6 +6,8 @@ output/**
 **/output/**
 _output_/**
 insecam/insecrawl/images/**
+kageyama_yuka/__dataset__/**
+kageyama_yuka/__models__/**
 python_video_editor/output/**
 pytorch/pytorch_tutorials_jp/**
 pytorch/shuwa_pytroch_handbook/data/**
@@ -17,10 +19,6 @@ __便利コード__/機械学習/runs/**
 __便利コード__/機械学習/mnist_train/**
 **/temp*/*
 __実装系__/Tracking/**
-**/runs/**
-**/model*/**
-**/yolov8*.pt
-*.mp4
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

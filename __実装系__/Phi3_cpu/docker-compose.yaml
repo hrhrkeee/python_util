@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  app:
+    image: python_pytorch
+    container_name: LLM_phi3
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: "./home/phi3/src"
+    volumes:
+      - ./src:/home/phi3/src
+    tty: true

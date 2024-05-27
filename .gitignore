@@ -151,3 +151,4 @@ dmypy.json
 .pyre/ 
 pyqt/Simple_PySide_Base-master/**
 web_image_spoiler/**/**
+__実装系__/Phi3_cpu/src/models/Phi-3-mini-4k-instruct-q4.gguf?download=true

@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  python-util:
+    image: ubuntu22-cuda118-torch231:latest
+    container_name: python-util
+    build:
+      context: .
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+         reservations:
+           devices:
+             - driver: nvidia
+               count: 1
+               capabilities: [gpu]
+    working_dir: /root/workspace
+    volumes:
+      - ..:/root/workspace  # ホームディレクトリに"workspace"フォルダをマウント
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
+    command: /bin/bash
+    stdin_open: true
+    tty: true

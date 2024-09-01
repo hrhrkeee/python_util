@@ -52,7 +52,7 @@ def age_input(input_dict, input_label_name="年齢"):
             with cols[0]:
                 input_dict["inputs"][i]["min"] = st.number_input(
                     label="Insert a number", 
-                    value=input_dict["inputs"][i]["min"], 
+                    value=get_default_input_dict()["年齢"]["inputs"][0]["min"], 
                     min_value=0, 
                     max_value=100, 
                     placeholder="Type a number...",
@@ -62,7 +62,7 @@ def age_input(input_dict, input_label_name="年齢"):
             with cols[1]:
                 input_dict["inputs"][i]["max"] = st.number_input(
                     label="Insert a number", 
-                    value=input_dict["inputs"][i]["max"], 
+                    value=get_default_input_dict()["年齢"]["inputs"][0]["max"], 
                     min_value=0, 
                     max_value=100, 
                     placeholder="Type a number...",
@@ -74,7 +74,7 @@ def age_input(input_dict, input_label_name="年齢"):
             with cols[3]:
                 input_dict["inputs"][i]["percent"] = st.number_input(
                     label="Insert a number", 
-                    value=input_dict["inputs"][i]["percent"], 
+                    value=get_default_input_dict()["年齢"]["inputs"][0]["percent"], 
                     min_value=1, 
                     max_value=100, 
                     placeholder="Type a number...",
@@ -92,7 +92,7 @@ def age_input2(input_dict, input_label_name="年齢"):
     with st.expander(input_label_name, expanded=False):
         cols = [6,1,2,1]
 
-        labels = ["範囲", "", "割合", "削除"]
+        labels = ["範囲(歳)", "", "割合(%)", "削除"]
         for col, label in zip(st.columns(cols), labels):
             col.write(label)
 
@@ -104,7 +104,7 @@ def age_input2(input_dict, input_label_name="年齢"):
                         f"Select range for Input {i+1}",
                         min_value=0,
                         max_value=100,
-                        value=input_dict["inputs"][i]["range"],
+                        value=get_default_input_dict()["年齢（範囲指定）"]["inputs"][0]["range"],
                         key=f"range_{input_label_name}_range_{i}",
                         label_visibility="collapsed",
                     )
@@ -113,7 +113,7 @@ def age_input2(input_dict, input_label_name="年齢"):
                 with st_columns[2]:
                     input_dict["inputs"][i]["percent"] = st.number_input(
                         label="Insert a number", 
-                        value=input_dict["inputs"][i]["percent"], 
+                        value=get_default_input_dict()["年齢（範囲指定）"]["inputs"][0]["percent"], 
                         min_value=1, 
                         max_value=100, 
                         placeholder="Type a number...",
@@ -136,6 +136,9 @@ def main():
         
         if input_label_name == "年齢（範囲指定）":
             st.session_state.input_dict[input_label_name] = age_input2(st.session_state.input_dict[input_label_name], input_label_name)
+
+
+    st.write(st.session_state.input_dict)
 
     pass
 

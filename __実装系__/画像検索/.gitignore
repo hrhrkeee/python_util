@@ -1,6 +1,5 @@
 model/*
 *.db*
-images/*
 
 !.gitkeep
 !.gitignore

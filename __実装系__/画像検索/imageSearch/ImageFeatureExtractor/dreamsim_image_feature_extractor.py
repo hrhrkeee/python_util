@@ -7,8 +7,9 @@ from dreamsim import dreamsim
 
 from .base_feature_extractor import BaseFeatureExtractor
 
-import logging
-logger = logging.getLogger(__name__)
+from imageSearch.utils.logger_util import configure_logger
+logger = configure_logger("imageSearch")
+
 
 
 class DreamSimImageFeatureExtractor(BaseFeatureExtractor):

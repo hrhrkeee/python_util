@@ -8,12 +8,9 @@ from torchvision.models import ResNet50_Weights
 
 from .base_feature_extractor import BaseFeatureExtractor
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.CRITICAL)
-handler = logging.StreamHandler()
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-handler.setFormatter(formatter)
-logger.addHandler(handler)
+from imageSearch.utils.logger_util import configure_logger
+logger = configure_logger("imageSearch")
+
 
 class Resnet50ImageFeatureExtractor(BaseFeatureExtractor):
     def __init__(self, device=None):

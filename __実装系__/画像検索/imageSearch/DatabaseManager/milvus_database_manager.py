@@ -1,13 +1,10 @@
 import logging
 from pymilvus import connections, Collection, FieldSchema, CollectionSchema, DataType, utility
 from .base_database_manager import BaseDatabaseManager
+from imageSearch.utils.logger_util import configure_logger
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.CRITICAL)
-handler = logging.StreamHandler()
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-handler.setFormatter(formatter)
-logger.addHandler(handler)
+logger = configure_logger("imageSearch")
+
 
 class MilvusDatabaseManager(BaseDatabaseManager):
     def __init__(self, uri, collection_name, index_params, dim, max_length=256, recreate=True):

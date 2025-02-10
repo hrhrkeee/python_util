@@ -27,6 +27,6 @@ class BaseDatabaseManager(abc.ABC):
         pass
 
     @abc.abstractmethod
-    def save(self, index_file=None):
+    def save(self, save_dir=None, file_name=""):
         """インデックスを保存するメソッド"""
         pass

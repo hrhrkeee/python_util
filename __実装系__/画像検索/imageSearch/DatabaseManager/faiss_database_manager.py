@@ -2,6 +2,7 @@ import os
 import numpy as np
 import faiss
 import logging
+from pathlib import Path
 from .base_database_manager import BaseDatabaseManager
 
 # 複数の OpenMP ランタイムが初期化される場合のワークアラウンド
@@ -15,8 +16,11 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 class FAISSDatabaseManager(BaseDatabaseManager):
-    def __init__(self, dim, index_file=None, recreate=True):
+    def __init__(self, dim=None, index_file=None, recreate=True):
         self.dim = dim
+        if not Path(index_file).exists() and dim is None:
+            raise ValueError("次元数が指定されていません。")
+        
         self.index_file = index_file
         self.file_paths = []  # 各ベクトルに対応する画像ファイルパスのリスト
         self.index = None
@@ -53,7 +57,7 @@ class FAISSDatabaseManager(BaseDatabaseManager):
         self.index.add(embeddings)
         self.file_paths.extend(file_paths)
         logger.info("%d 件の埋め込みをインデックスに追加しました。", len(file_paths))
-
+        
     def search(self, query_vector, k, **kwargs):
         query_vector = np.array(query_vector, dtype=np.float32)
         query_vector = np.squeeze(query_vector)

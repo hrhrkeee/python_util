@@ -12,12 +12,12 @@ logger = logging.getLogger(__name__)
 
 
 class DreamSimImageFeatureExtractor(BaseFeatureExtractor):
-    def __init__(self, device=None):
+    def __init__(self, cache_dir="../../model/DreamSim/", device=None):
         if device is None:
             device = "cuda" if torch.cuda.is_available() else "cpu"
         self.device = device
         
-        self.model, self.preprocess = dreamsim(pretrained=True, device=self.device, cache_dir="../model/DreamSim")
+        self.model, self.preprocess = dreamsim(pretrained=True, device=self.device, cache_dir=cache_dir)
         self.dim = 1792
         
     def extract_feature(self, image_path):

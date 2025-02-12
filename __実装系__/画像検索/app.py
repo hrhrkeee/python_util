@@ -44,7 +44,7 @@ class ImageSearchApp(TkinterDnD.Tk):
         self.thumbnail_images = []  # PhotoImageの参照保持（検索結果用）
         self.search_cells = []      # 各セル（Frame）を保持
         self.search_results = []      # 検索結果のPathオブジェクト
-        
+
         self.create_menu()
         self.create_widgets()
     

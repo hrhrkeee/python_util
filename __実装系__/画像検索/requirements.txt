@@ -1,2 +1,4 @@
 faiss-cpu
 tkinterdnd2
+onnxruntime
+opencv-python

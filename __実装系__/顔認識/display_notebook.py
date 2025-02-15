@@ -8,7 +8,7 @@ from IPython.display import HTML, display
 from typing import Any, Optional, Union
 
 
-def display_images_grid_html(images, cols=3, row_height=200, labels=None, font_scale=1.0):
+def display_images_grid_html(images, labels=None, cols=3, row_height=200, font_scale=1.0):
     
     def _convert_imageType_for_html(image: Any) -> Optional[Union[Path, str]]:
         

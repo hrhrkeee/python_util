@@ -1,0 +1,9 @@
+
+data/*
+!data/.gitkeep
+
+output/*
+!output/.gitkeep
+
+tmp/*
+!tmp/.gitkeep

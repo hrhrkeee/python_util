@@ -1,0 +1,19 @@
+[project]
+name = "doc-scan"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "image>=1.5.33",
+    "ipykernel>=6.30.1",
+    "numpy>=2.2.6",
+    "ocrmypdf>=16.10.4",
+    "opencv-python>=4.12.0.88",
+    "page-dewarp>=0.2.0",
+    "pillow>=11.3.0",
+    "pypdf2>=3.0.1",
+    "pytesseract>=0.3.13",
+    "scipy>=1.15.3",
+    "tqdm>=4.67.1",
+]

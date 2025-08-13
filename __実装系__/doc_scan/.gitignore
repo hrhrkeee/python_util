@@ -5,5 +5,8 @@ data/*
 output/*
 !output/.gitkeep
 
+models/*
+!models/.gitkeep
+
 tmp/*
 !tmp/.gitkeep

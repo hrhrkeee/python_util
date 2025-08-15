@@ -1,0 +1,35 @@
+{
+    // Copilot 基本機能
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": false
+    },
+    "github.copilot.inlineSuggest.enable": true,
+    "github.copilot.chat.enable": true,
+
+    // 指示ファイル（.github/copilot-instructions.md / .instructions.md）の自動利用
+    "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+
+    // Prompt Files の検索場所（既定の .github/prompts を有効化）
+    "chat.promptFilesLocations": {
+        ".github/prompts": true
+    },
+
+    // Instruction Files の検索場所（既定の .github/instructions を有効化）
+    "chat.instructionsFilesLocations": {
+        ".github/instructions": true
+    },
+
+    // Chat Mode Files の検索場所（既定の .github/chatmodes を有効化）
+    "chat.modeFilesLocations": {
+        ".github/chatmodes": true
+    },
+
+    // Chat ツールの自動承認
+    "chat.tools.autoApprove": true,
+
+    // 1エージェントにつき許可する最大リクエスト数
+    "chat.agent.maxRequests": 100
+}

@@ -1,0 +1,6 @@
+model/DreamSim/*
+localDB/*
+*.db*
+
+!.gitkeep
+!.gitignore
